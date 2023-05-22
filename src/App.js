@@ -1,57 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import Login from "./Login";
+import "./App.css";
+import CreateOrJoin from "./CreateOrJoin";
+import FixtureList from "./FixtureList";
+import PointTable from "./PointTable";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "./features/userSlice";
+import { auth } from "./Firebase";
+import Header from "./Header";
+import {
+  selectCreateTournamentIsOpen,
+  selectJoinTournamentIsOpen,
+} from "./features/createOrJoinSlice";
+import CreateTournament from "./CreateTournament";
+import JoinTournament from "./JoinTournament";
 
 function App() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const createTournamentIsOpen = useSelector(selectCreateTournamentIsOpen);
+  const joinTournamentIsOpen = useSelector(selectJoinTournamentIsOpen);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(
+          login({
+            displayName: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL,
+          })
+        );
+      }
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      {!user ? (
+        <Login />
+      ) : (
+        <div className="App">
+          <div className="app-body">
+            <Header />
+            <Routes>
+              <Route path="/" element={<CreateOrJoin />} />
+              <Route path="/fixtures" element={<FixtureList />} />
+              <Route path="/pointtable" element={<PointTable />} />
+            </Routes>
+          </div>
+          {createTournamentIsOpen && <CreateTournament />}
+          {joinTournamentIsOpen && <JoinTournament />}
+        </div>
+      )}
+    </Router>
   );
 }
 

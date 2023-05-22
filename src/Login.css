@@ -1,0 +1,29 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100vh;
+}
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 250px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+
+}
+.login-button:hover {
+  background-color: silver;
+  cursor: pointer;
+}
+.login-button > p {
+  font-size: medium;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+

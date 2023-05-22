@@ -1,0 +1,22 @@
+.join {
+    display: flex;
+    flex-direction: column;
+  }
+  .tournaments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+  }
+  .tournaments > p {
+    padding-right: 20px;
+  }
+  .tournaments > button {
+    background-color: white;
+    color: blue;
+    height: 35px;
+  }
+  .tournaments > button:hover {
+    background-color: lightblue;
+  }

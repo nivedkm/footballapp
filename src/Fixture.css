@@ -1,0 +1,53 @@
+.fixtures-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.fixtures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid darkturquoise;
+    padding-top: 20px;
+  }
+  .fixture {
+    display: flex;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: darkturquoise;
+  }
+  .fixture > p {
+    margin: 10px;
+  }
+  .fixture > input {
+    width: 50px;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 5px;
+  }
+  
+  .fixtures-submit > button {
+    border: none;
+    padding: 10px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+  }
+  .fixtures-submit > button:hover {
+    background-color: gray;
+    cursor: pointer;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

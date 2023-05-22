@@ -1,0 +1,24 @@
+.pointtable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.pointtable-table {
+  width: 700px;
+  height: auto;
+}
+.pointtable-head > th {
+  background-color: darkblue;
+  padding: 10px;
+  color: white;
+}
+.pointtable-body {
+  background-color: skyblue;
+}
+
+th,
+td {
+  border-radius: 3px;
+  height: 35px;
+}

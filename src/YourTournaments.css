@@ -1,0 +1,25 @@
+.your- {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .your > h4 {
+    padding-top: 10px;
+  }
+  .your-tournaments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+  }
+  .your-tournaments > button {
+    background-color: white;
+    height: 35px;
+  }
+  .your-tournaments > button:hover {
+    background-color: lightblue;
+  }
+  .your-tournaments > button > p {
+    padding-right: 10px;
+  }
