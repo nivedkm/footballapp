@@ -7,7 +7,6 @@ import { openCreateTournament } from "./features/createOrJoinSlice";
 import TournamentJoin from "./TournamentJoin";
 
 function CreateOrJoin() {
-  //testing
 
   const dispatch = useDispatch();
 
