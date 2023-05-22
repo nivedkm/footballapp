@@ -9,7 +9,7 @@ import TournamentJoin from "./TournamentJoin";
 function CreateOrJoin() {
 
   const dispatch = useDispatch();
-
+  //tesitng2
   return (
     <div className="createorjoin">
       <div className="create">
