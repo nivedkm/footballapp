@@ -8,13 +8,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login, selectUser } from "./features/userSlice";
 import { auth } from "./Firebase";
-import Header from "./Header";
+
 import {
   selectCreateTournamentIsOpen,
   selectJoinTournamentIsOpen,
 } from "./features/createOrJoinSlice";
 import CreateTournament from "./CreateTournament";
 import JoinTournament from "./JoinTournament";
+import Header from "./Header";
 
 function App() {
   const user = useSelector(selectUser);

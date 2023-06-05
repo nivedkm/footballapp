@@ -1,12 +1,13 @@
-import { Avatar, IconButton } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "./features/userSlice";
-import { auth } from "./Firebase";
+import Avathar from "./Avathar";
 import "./Header.css";
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import { useDispatch } from "react-redux";
+import { auth } from "./Firebase";
+import { logout } from "./features/userSlice";
 
 function Header() {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const signOut = () => {
@@ -16,9 +17,16 @@ function Header() {
   };
   return (
     <div className="header">
-      <IconButton onClick={signOut}>
-        <Avatar src={user?.photoUrl} />
-      </IconButton>
+      <div className="header-left">
+        <SportsSoccerIcon/>
+        <h1>Fixture Maker</h1>
+      </div>
+      <div className="header-right">
+        <Button onClick={signOut}>
+          <p className="header-logout">LogOut</p>
+        </Button>
+        <Avathar className="header-avatar" />
+      </div>
     </div>
   );
 }

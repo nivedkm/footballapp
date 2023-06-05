@@ -5,6 +5,7 @@ import YourTournaments from "./YourTournaments";
 import { useDispatch } from "react-redux";
 import { openCreateTournament } from "./features/createOrJoinSlice";
 import TournamentJoin from "./TournamentJoin";
+import Header from "./Header";
 
 function CreateOrJoin() {
 
