@@ -18,8 +18,8 @@ function CreateOrJoin() {
       </div>
 
       <h4>Join other tournaments</h4>
-      <TournamentJoin tournamentName="Tournament 1" slots={3} />
-      <TournamentJoin tournamentName="Tournament 2" slots={8} />
+      <TournamentJoin tournamentName="Premier League" slots={3} />
+      <TournamentJoin tournamentName="Bundesliga" slots={8} />
 
       <h4>Your tournaments</h4>
       <YourTournaments tournamentName="Tournament 1" status="admin" />
