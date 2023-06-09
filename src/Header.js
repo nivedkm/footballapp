@@ -6,6 +6,7 @@ import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import { useDispatch } from "react-redux";
 import { auth } from "./Firebase";
 import { logout } from "./features/userSlice";
+import headerlogo from "./images/headerlogo.png"
 
 function Header() {
   const dispatch = useDispatch();
@@ -18,8 +19,12 @@ function Header() {
   return (
     <div className="header">
       <div className="header-left">
-        <SportsSoccerIcon/>
+        
+       {/*
         <h1>Fixture Maker</h1>
+*/     }
+      <img src={headerlogo} alt=""/>
+      
       </div>
       <div className="header-right">
         <Button onClick={signOut}>

@@ -5,7 +5,11 @@
   align-items: center;
   width: auto;
   height: 100vh;
+  background-image: url("logo background.png");
+  background-size: cover;
+
 }
+
 .login-button {
   display: flex;
   justify-content: center;
@@ -15,15 +19,28 @@
   border: none;
   background-color: white;
   border-radius: 10px;
-
+  background-color: whitesmoke;
+  margin-bottom: 30px;
 }
 .login-button:hover {
-  background-color: silver;
   cursor: pointer;
+  opacity: 50%;
 }
 .login-button > p {
   font-size: medium;
   margin-right: 5px;
   margin-left: 5px;
 }
-
+.login-container{
+  width: 400px;
+  background: rgba(0.2,0,0.2,0.1);
+  backdrop-filter: saturate(110%) blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.login-container>img{
+  width: 400px;
+}
