@@ -30,7 +30,7 @@ function Header() {
         <Button onClick={signOut}>
           <p className="header-logout">LogOut</p>
         </Button>
-        <Avathar className="header-avatar" />
+        <Avathar/>
       </div>
     </div>
   );

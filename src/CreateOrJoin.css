@@ -14,6 +14,10 @@
 }
 .create > h4 {
   padding-bottom: 10px;
+  color: white;
+}
+.join{
+  color: aliceblue;
 }
 .create > button {
   background-color: white;
@@ -27,3 +31,4 @@
 .nohide{
   display: inline;
 }
+

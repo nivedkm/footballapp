@@ -22,11 +22,11 @@ function CreateOrJoin() {
         </Button>
       </div>
 
-      <h4>Join other tournaments</h4>
+      <h4 className="join">Join other tournaments</h4>
       <TournamentJoin tournamentName="Premier League" slots={3} />
       <TournamentJoin tournamentName="Bundesliga" slots={8} />
 
-      <h4>Your tournaments</h4>
+      <h4 className="join">Your tournaments</h4>
       <YourTournaments tournamentName="Tournament 1" status="admin" />
       <YourTournaments tournamentName="Tournament 1" status="participant" />
     </div>
