@@ -8,13 +8,18 @@ import TournamentJoin from "./TournamentJoin";
 import Header from "./Header";
 
 function CreateOrJoin() {
-
   const dispatch = useDispatch();
   return (
     <div className="createorjoin">
       <div className="create">
         <h4>Create new tournament</h4>
-        <Button onClick={() => dispatch(openCreateTournament())}>Create</Button>
+        <Button
+          onClick={() => {
+            dispatch(openCreateTournament());
+          }}
+        >
+          Create
+        </Button>
       </div>
 
       <h4>Join other tournaments</h4>

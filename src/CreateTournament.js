@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { closeCreateTournament } from "./features/createOrJoinSlice";
 import { useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
+import { Button } from "@mui/base";
 
 function CreateTournament() {
   const {
@@ -19,10 +20,7 @@ function CreateTournament() {
     <div className="createtournament">
       <div className="createtournament-header">
         <h3>Create New Tournament</h3>
-        <CloseIcon
-          className="createtournament-close"
-          onClick={() => dispatch(closeCreateTournament())}
-        />
+        <CloseIcon onClick={() => dispatch(closeCreateTournament())} />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -53,6 +51,9 @@ function CreateTournament() {
         {errors.password && (
           <p className="createtournament-error">Password is required!</p>
         )}
+        <div className="createtournament-submit">
+          <Button type="submit">SUBMIT</Button>
+        </div>
       </form>
     </div>
   );

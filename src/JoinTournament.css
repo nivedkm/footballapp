@@ -1,0 +1,68 @@
+.jointournament {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    position: absolute;
+    top: 34%;
+    left: 52%;
+    transform: translate(50%,50%)
+  }
+  .jointournament > form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .jointournament-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+  }
+  .jointournament-header > h3 {
+    margin-left: 10px;
+  }
+  .jointournament-header > svg {
+    margin: 8px;
+    background-color: grey;
+    cursor: pointer;
+  }
+  .jointournament-header > svg:hover {
+    opacity: 50%;
+  }
+  .jointournament > form > input {
+    margin-top: 2px;
+    border: none;
+    height: 40px;
+    outline: none;
+    font-size: medium;
+    margin-left: 5px;
+  }
+  .jointournament-submit > button {
+    background-color: black;
+    color: lightgreen;
+    font-size: small;
+    font-weight: 800;
+    margin-top: 2px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 80px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  .jointournament-submit > button:hover {
+    background-color: darkslategray;
+  }
+  .jointournament-error {
+    color: red;
+    margin-left: 10px;
+  }
+  .jointournament-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+  }
+  

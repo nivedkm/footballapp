@@ -6,6 +6,7 @@
   text-align: center;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .create {
@@ -20,4 +21,9 @@
   height: 35px;
   width: 150px;
 }
-
+.hide{
+  display: none;
+}
+.nohide{
+  display: inline;
+}
