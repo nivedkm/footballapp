@@ -2,10 +2,13 @@ import React from "react";
 import "./CreateTournament.css";
 import { useForm } from "react-hook-form";
 import { closeCreateTournament } from "./features/createOrJoinSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/base";
-
+import { db } from "./Firebase";
+import "firebase/compat/firestore";
+import { addDoc, collection } from "firebase/firestore";
+  
 function CreateTournament() {
   const {
     register,
@@ -13,8 +16,13 @@ function CreateTournament() {
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  const onSubmit = (formData) => {
+  const onSubmit = async (formData) => {
     console.log(formData);
+    const docs = await addDoc(collection(db, "Tournaments"), {
+      tname: formData.trname,
+      tslots: formData.slots,
+    });
+    dispatch(closeCreateTournament());
   };
   return (
     <div className="createtournament">
@@ -41,15 +49,6 @@ function CreateTournament() {
         />
         {errors.slots && (
           <p className="createtournament-error">Enter number of slots!</p>
-        )}
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          {...register("password", { required: true })}
-        />
-        {errors.password && (
-          <p className="createtournament-error">Password is required!</p>
         )}
         <div className="createtournament-submit">
           <Button type="submit">SUBMIT</Button>

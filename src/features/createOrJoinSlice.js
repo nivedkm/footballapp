@@ -5,6 +5,7 @@ export const createOrJoinSlice = createSlice({
   initialState: {
     createTournamentIsOpen: false,
     joinTournamentIsOpen: false,
+    tournamentName: "",
   },
   reducers: {
     openCreateTournament: (state) => {
@@ -19,6 +20,9 @@ export const createOrJoinSlice = createSlice({
     closeJoinTournament: (state) => {
       state.joinTournamentIsOpen = false;
     },
+    setTournamentName: (state, action) => {
+      state.tournamentName = action.payload;
+    },
   },
 });
 
@@ -27,10 +31,13 @@ export const {
   closeCreateTournament,
   openJoinTournament,
   closeJoinTournament,
+  setTournamentName,
 } = createOrJoinSlice.actions;
 
 export const selectCreateTournamentIsOpen = (state) =>
   state.createorjoin.createTournamentIsOpen;
 export const selectJoinTournamentIsOpen = (state) =>
   state.createorjoin.joinTournamentIsOpen;
-  export default createOrJoinSlice.reducer;
+export const selectSetTournamentNameIsOpen = (state) =>
+  state.createorjoin.tournamentName;
+export default createOrJoinSlice.reducer;

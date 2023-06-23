@@ -15,7 +15,12 @@
   }
   .your-tournaments > button {
     background-color: white;
+    width: 200px;
     height: 35px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .your-tournaments > button:hover {
     background-color: lightblue;

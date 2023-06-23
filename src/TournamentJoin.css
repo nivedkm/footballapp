@@ -1,22 +1,33 @@
 .join {
     display: flex;
-    flex-direction: column;
   }
   .tournaments {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    width: 400px;
     border-bottom: 1px solid gray;
     padding: 10px;
   }
-  .tournaments > p {
-    padding-right: 20px;
+  .tournament-name{
+    flex: 0.4;
+    text-align: start;
   }
-  .tournaments > button {
+  .tournament-slots{
+    flex: 0.3;
+    display: flex;
+    justify-content: space-between;
+  }
+  .tournament-button{
+    flex: 0.3;
+  }
+
+  .tournament-button {
     background-color: white;
     color: blue;
     height: 35px;
+    margin-left: 20px;
   }
-  .tournaments > button:hover {
+  .tournament-button:hover {
     background-color: lightblue;
   }

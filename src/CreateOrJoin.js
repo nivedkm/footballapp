@@ -1,13 +1,33 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CreateOrJoin.css";
 import YourTournaments from "./YourTournaments";
-import { useDispatch } from "react-redux";
-import { openCreateTournament } from "./features/createOrJoinSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { openCreateTournament, selectSetTournamentNameIsOpen } from "./features/createOrJoinSlice";
 import TournamentJoin from "./TournamentJoin";
 import Header from "./Header";
+import { db } from "./Firebase";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 
 function CreateOrJoin() {
+  const [trnmnts, setTrnmnts] = useState([]);
+
+  useEffect(() => {
+    const tournamentsRef = query(
+      collection(db, "Tournaments"),
+      orderBy("tname", "asc")
+    );
+
+    const unsubscribe = onSnapshot(tournamentsRef, (snapshot) => {
+      setTrnmnts(
+        snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+      );
+    });
+    return () => unsubscribe();
+  }, []);
   const dispatch = useDispatch();
   return (
     <div className="createorjoin">
@@ -23,12 +43,22 @@ function CreateOrJoin() {
       </div>
 
       <h4 className="join">Join other tournaments</h4>
-      <TournamentJoin tournamentName="Premier League" slots={3} />
-      <TournamentJoin tournamentName="Bundesliga" slots={8} />
+      {trnmnts?.empty && (
+        <>
+          <p>No available tournaments</p>
+        </>
+      )}
+      {trnmnts.map((tournament) => (
+        <TournamentJoin
+          tournamentName={tournament.tname}
+        
+          />
+      ))}
 
       <h4 className="join">Your tournaments</h4>
-      <YourTournaments tournamentName="Tournament 1" status="admin" />
-      <YourTournaments tournamentName="Tournament 1" status="participant" />
+      {trnmnts.map((tournament) => (
+        <YourTournaments tournamentName={tournament.tname} status="admin" />
+      ))}
     </div>
   );
 }
