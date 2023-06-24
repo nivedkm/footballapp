@@ -14,18 +14,42 @@
     border-top: 1px solid darkturquoise;
     padding-top: 20px;
   }
-  .fixture {
+  .fixture-right {
     display: flex;
+    width: 170px;
     padding: 15px;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 5px;
     background-color: darkturquoise;
   }
-  .fixture > p {
+  .fixture-right > p {
     margin: 10px;
   }
-  .fixture > input {
+  .fixture-right > input {
+    width: 50px;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 5px;
+  }
+
+  .fixture-left {
+    display: flex;
+    justify-content: end;
+    width: 170px;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: darkturquoise;
+  }
+  .fixture-left > p {
+    margin: 10px;
+  }
+  .fixture-left > input {
     width: 50px;
     outline: none;
     border: none;

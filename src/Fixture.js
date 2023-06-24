@@ -6,13 +6,13 @@ function Fixture({ team1, team2 }) {
   return (
     <div className="fixtures-main">
       <div className="fixtures">
-        <div className="fixture">
+        <div className="fixture-left">
           <p>{team1}</p>
-          <input type="number" />
+          <input type="number" step="1" min="0" />
         </div>
         <h3>VS</h3>
-        <div className="fixture">
-          <input type="number" />
+        <div className="fixture-right">
+          <input type="number" step="1" min="0" />
           <p>{team2}</p>
         </div>
       </div>
