@@ -32,7 +32,7 @@ function CreateOrJoin() {
   return (
     <div className="createorjoin">
       <div className="create">
-        <h4>Create new tournament</h4>
+        <h4>Create New Tournament</h4>
         <Button
           onClick={() => {
             dispatch(openCreateTournament());
@@ -42,7 +42,7 @@ function CreateOrJoin() {
         </Button>
       </div>
 
-      <h4 className="join">Join other tournaments</h4>
+      <h4 className="join">Join Other Tournaments</h4>
       {trnmnts?.empty && (
         <>
           <p>No available tournaments</p>
@@ -55,10 +55,10 @@ function CreateOrJoin() {
           />
       ))}
 
-      <h4 className="join">Your tournaments</h4>
+      {/* <h4 className="join">Your Tournaments</h4>
       {trnmnts.map((tournament) => (
         <YourTournaments tournamentName={tournament.tname} status="admin" />
-      ))}
+      ))} */}
     </div>
   );
 }

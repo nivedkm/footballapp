@@ -1,5 +1,6 @@
 .pointtable {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -9,16 +10,39 @@
   height: auto;
 }
 .pointtable-head > th {
-  background-color: darkblue;
+  background-color: black;
   padding: 10px;
-  color: white;
 }
 .pointtable-body {
   background-color: skyblue;
 }
 
-th,
+th {
+  border-radius: 3px;
+  height: 35px;
+  color: white;
+}
 td {
   border-radius: 3px;
   height: 35px;
+  color: black;
+}
+.pointtable>h2 {
+  color: black !important;
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .pointtable-table {
+    width: 100%;
+  }
+  th,
+  td {
+    width: 100%;
+    text-align: center;
+
+  }firebas
+  th {
+    text-align: center;
+  }
 }

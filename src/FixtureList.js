@@ -10,6 +10,7 @@ import Fixture from "./Fixture";
 import "./FixtureList.css";
 
 function FixtureList() {
+
   const tournamentName = useSelector(selectSetTournamentNameIsOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -165,11 +166,14 @@ function FixtureList() {
   console.log("tournamentName:", tournamentName);
   return (
     <div className="fixtures-parent">
-      <h2>FixtureList</h2>
+      <h2>FIXTURES</h2>
       <h3>{tournamentName}</h3>
-      {fixtures.map((fixture, index) => (
+      {fixtures.length ===0  ? (<p>Loading Fixtures...</p>):(
+        
+      fixtures.map((fixture, index) => (
         <Fixture key={index} team1={fixture.team1} team2={fixture.team2} />
-      ))}
+      ))
+      )}
       <div className="fixtures-pointtable">
         <Button onClick={viewPointtable}>View Point Table</Button>
       </div>

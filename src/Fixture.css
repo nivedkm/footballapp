@@ -1,77 +1,85 @@
 .fixtures-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.fixtures {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    margin-top: 20px;
-    border-top: 1px solid darkturquoise;
-    padding-top: 20px;
-  }
-  .fixture-right {
-    display: flex;
-    width: 170px;
-    padding: 15px;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: darkturquoise;
-  }
-  .fixture-right > p {
-    margin: 10px;
-  }
-  .fixture-right > input {
-    width: 50px;
-    outline: none;
-    border: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: larger;
-    border-radius: 5px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .fixture-left {
-    display: flex;
-    justify-content: end;
-    width: 170px;
-    padding: 15px;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    background-color: darkturquoise;
-  }
-  .fixture-left > p {
-    margin: 10px;
-  }
-  .fixture-left > input {
-    width: 50px;
-    outline: none;
-    border: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: larger;
-    border-radius: 5px;
-  }
-  
-  .fixtures-submit > button {
-    border: none;
-    padding: 10px;
-    background-color: darkcyan;
-    color: white;
-    border-radius: 5px;
-  }
-  .fixtures-submit > button:hover {
-    background-color: gray;
-    cursor: pointer;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+.fixtures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  border-top: 1px solid darkturquoise;
+  padding-top: 20px;
+}
+.fixture-right {
+  display: flex;
+  width: 160px;
+  padding: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: darkturquoise;
+}
+.fixture-right > p {
+  margin: 10px;
+}
+.fixture-right > input {
+  width: 50px;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 5px;
+}
+.disabled-input {
+  pointer-events: none !important;
+  opacity: 1 !important;
+  background-color: white;
+}
+.disabled-button {
+  opacity: 1 !important;
+  color: lightgreen !important;
+}
+.fixture-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 160px;
+  padding: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: darkturquoise;
+}
+.fixture-left > p {
+  margin: 10px;
+}
+.fixture-left > input {
+  width: 50px;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  border-radius: 5px;
+}
+
+.fixtures-submit > button {
+  border: none;
+  padding: 10px;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 5px;
+}
+.fixtures-submit > button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

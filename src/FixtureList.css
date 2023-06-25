@@ -1,13 +1,17 @@
-.fixtures-parent{
+.fixtures-parent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex-grow: 1;
+  overflow: auto;
   align-items: center;
   max-height: calc(100vh - 100px);
-  overflow: auto;
   padding: 50px;
   box-sizing: border-box;
+}
+.fixtures-parent > h2,
+h3 {
+  color: black !important;
 }
 .fixtures-pointtable {
   padding-top: 60px;

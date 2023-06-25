@@ -7,22 +7,25 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  justify-content: flex-start;
+  flex-grow: 1;
+  overflow: auto;
+  padding-top: 60px;
 }
 
 .create {
   padding: 10px;
   font-size: 20px;
- /* color: #fff;
+  /* color: #fff;
   text-shadow: 0 0 10px white, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;*/
 }
 
-
 .create > h4 {
   padding-bottom: 10px;
-  color: white;
+  color: black !important;
 }
-.join{
-  color: aliceblue;
+.join {
+  color: black !important;
 }
 .create > button {
   background-color: white;
@@ -30,10 +33,9 @@
   height: 35px;
   width: 150px;
 }
-.hide{
+.hide {
   display: none;
 }
-.nohide{
+.nohide {
   display: inline;
 }
-
