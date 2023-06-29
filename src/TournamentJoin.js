@@ -37,13 +37,16 @@ function TournamentJoin({ tournamentName }) {
     };
     fetchData();
   }, [tournamentQuery]);
+  useEffect(() => {
+    localStorage.removeItem("tournamentName");
+  }, []);
 
   const handleClick = () => {
     dispatch(openJoinTournament());
     dispatch(setTournamentName(tournamentName));
   };
   const handleClickFixtureList = () => {
-    dispatch(setTournamentName(tournamentName));    
+    dispatch(setTournamentName(tournamentName));
     navigate("/fixtures");
   };
   return (

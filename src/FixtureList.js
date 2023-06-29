@@ -32,7 +32,7 @@ function FixtureList() {
   useEffect(() => {
     // Save tournamentName to local storage
     localStorage.setItem("tournamentName", tournamentName);
-  }, [tournamentName]);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
